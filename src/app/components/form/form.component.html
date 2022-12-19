@@ -1,0 +1,53 @@
+<form class="form" [formGroup]="currencyConversionForm">
+  <div class="amount">
+    <label for="amount" class="title">Amount</label>
+    <input 
+      id="amount" 
+      type="number" 
+      oninput="this.value = this.value.replace(/[^0-9.]/g, '')"  
+      placeholder=" Amount to convert"
+      formControlName="amount">
+  </div>
+  <div class="swap">
+    <div>
+      <p class="title">From</p>
+      <select id="base-currency" matNativeControl formControlName="baseCurrencyForm">
+        <option *ngFor="let currency of currencies" [value]="currency.value">
+          {{currency.value}}
+        </option>
+      </select>
+    </div>
+    <div>
+      <span class="swap-button" (click)="onCurrenciesSwapped()">
+        <img class="swap-icon" src="../../../assets/reverse.svg">
+      </span>
+    </div>
+    <div>
+      <p class="title">To</p>
+      <select id="counter-currency" matNativeControl formControlName="counterCurrencyForm">
+        <option *ngFor="let currency of currencies" [value]="currency.value">
+          {{currency.value}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <p class="divider">
+    1 &nbsp; <span>{{ baseCurrency }}</span> 
+    = 
+    {{ baseToCounter }} &nbsp; <span> {{ counterCurrency }}</span>
+  </p>
+  <div class="calculator">
+    <div class="calculator-base">
+      <div class="calculator-base-number">{{ currencyConversionForm.value.amount }}</div>
+      &nbsp;
+      <div class="calculator-base-currency">{{ baseCurrency }}</div>
+    </div>
+    <div class="calculator-equal">=</div>
+    <div class="calculator-counter">
+      <div class="calculator-counter-number">{{ (currencyConversionForm.value.amount * baseToCounter).toFixed(2) }}</div>
+      &nbsp;
+      <div class="calculator-counter-currency">{{ counterCurrency }}</div>
+    </div>
+  </div>
+  <p class="divider">{{currentDate | date:'yyyy-MM-dd'}}</p>
+</form>

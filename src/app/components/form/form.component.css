@@ -1,0 +1,142 @@
+.form {
+    padding: 25px 20px 0;
+}
+
+.amount {
+    display: flex;
+    flex-direction: column;
+}
+
+#amount {
+    border-radius: 25px;
+    height: 25px;
+    border: 2px solid #a4a2a7;
+}
+
+#amount:focus {
+    border-color: #ad019a;
+    outline: none;
+    color: #ad019a;
+}
+
+.amount > label {
+    margin-bottom: 10px;
+}
+
+.swap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 25px;
+}
+
+.swap-button {
+    background-color: #ad019a;
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swap-icon {
+    height: 50%;
+    display: flex;
+}
+
+.title {
+    color: #a4a2a7;
+    font-size: 12px;
+    margin-bottom: 7.5px;
+}
+
+.divider {
+    display: flex;
+    flex-direction: row;
+    color: #adaeb0;
+    font-size: 12px;
+}
+
+.divider:before, p:after{
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;
+}
+.divider:before {
+    margin-right: 10px
+}
+.divider:after {
+    margin-left: 10px
+}
+
+span {
+    text-decoration: underline;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #8c8f98;
+    font-size: 14px;
+    margin: 30px 0;
+}
+
+.calculator-counter {
+    display: flex;
+    color: #ad019a;
+    align-items: baseline;
+}
+
+.calculator-counter-number {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.calculator-equal {
+    font-weight: bold;
+}
+
+.calculator-base {
+    display: flex;
+    align-items: baseline;
+}
+
+.calculator-base-number {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+input {
+    font-weight: bold;
+}
+  
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+select {
+    background-color: white;
+    border: 1.5px solid grey;
+    border-radius: 25px;
+    padding: 2px;
+    font-weight: bold;
+    color: #29232d;
+    padding: 11px;
+}
+
+select:focus {
+    border-color: #ad019a;
+    color: #ad019a;
+}
